@@ -15,8 +15,16 @@ public class serviceCurrency {
         return currencies;
     }
 
-    public void addCurrency(Currency currency) {
+    public Currency addCurrency(Currency currency) {
+        for(Currency currency1 : currencies){
+            if(currency1.getId().equals(currency.getId())){
+                return currency;
+            }
+        }
+        String id = UUID.randomUUID().toString();
+        currency.setId(id);
         currencies.add(currency);
+        return currency;
     }
 
     public Currency getCurrencyById(String id) {
@@ -39,3 +47,18 @@ public class serviceCurrency {
         currencies.removeIf(currency -> currency.getId().equals(id));
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
