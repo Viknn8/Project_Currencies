@@ -1,20 +1,20 @@
-package ru.tbank.ErrorControl;
+package ru.tbank.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.tbank.model.Currency;
-import ru.tbank.service.serviceCurrency;
+import ru.tbank.service.CurrencyService;
 import java.util.List;
 
 @RequestMapping("/api")
 @RequiredArgsConstructor
 @RestController
 
-public class controlCurrency {
+public class CurrencyControl {
 
 
-    private final serviceCurrency currencyService;
+    private final CurrencyService currencyService;
 
 
 

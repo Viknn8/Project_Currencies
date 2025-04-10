@@ -2,13 +2,13 @@ package ru.tbank.service;
 
 import org.springframework.stereotype.Service;
 import ru.tbank.model.Currency;
-import java.util.Iterator;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 @Service
-public class serviceCurrency {
+public class CurrencyService {
     private final List<Currency> currencies = new ArrayList();
 
     public List<Currency> getCurrencies() {
