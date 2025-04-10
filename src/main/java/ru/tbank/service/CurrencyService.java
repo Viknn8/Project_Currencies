@@ -2,21 +2,29 @@ package ru.tbank.service;
 
 import org.springframework.stereotype.Service;
 import ru.tbank.model.Currency;
-import java.util.Iterator;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 @Service
-public class serviceCurrency {
+public class CurrencyService {
     private final List<Currency> currencies = new ArrayList();
 
     public List<Currency> getCurrencies() {
         return currencies;
     }
 
-    public void addCurrency(Currency currency) {
+    public Currency addCurrency(Currency currency) {
+        for(Currency currency1 : currencies){
+            if(currency1.getId().equals(currency.getId())){
+                return currency;
+            }
+        }
+        String id = UUID.randomUUID().toString();
+        currency.setId(id);
         currencies.add(currency);
+        return currency;
     }
 
     public Currency getCurrencyById(String id) {
@@ -39,3 +47,18 @@ public class serviceCurrency {
         currencies.removeIf(currency -> currency.getId().equals(id));
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
